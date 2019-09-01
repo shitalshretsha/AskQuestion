@@ -1,0 +1,37 @@
+<div class="container" style="padding-top:40px;">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card mx-4">
+        <div class="card-body p-4">
+          <form class="form"  #userForm="ngForm">
+            <h1 style="text-align:center">Register</h1>
+
+            <div class="input-group mb-3" >
+
+              <input type="text" class="form-control" placeholder="Username" required [(ngModel)]="userName" name="name">
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" placeholder="Password" name="pw" required [(ngModel)]="password">
+            </div>
+            <div class="input-group mb-4">
+                <input type="text" class="form-control" placeholder="Email" name="Email">
+              </div>
+
+
+            <div class="custom-control custom-radio">
+              <input type="radio" name= "radio" [(ngModel)] ="role" value= "USER" class="custom-control-input" id="defaultUnchecked" mdbInput>
+              <label class="custom-control-label" for="defaultUnchecked">USER</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input type="radio" name= "radio" [(ngModel)] ="role" value= "EXPERT" class="custom-control-input" id="defaultChecked" required [(ngModel)]="role" name="defaultExampleRadios" mdbInput >
+              <label class="custom-control-label" for="defaultChecked">EXPERT</label>
+            </div>
+            <button [disabled]="userForm.form.invalid" type="submit" class="btn btn-block btn-success" (click)="onFormSubmit()">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
